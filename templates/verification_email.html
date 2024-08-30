@@ -1,0 +1,7 @@
+{% autoescape off %}
+Hi {{ user.first_name }},
+
+Please click the following link to verify your Beers account:
+
+http://{{ domain }}{% url 'user-verify' uidb64=uuid token=token %}
+{% endautoescape %}

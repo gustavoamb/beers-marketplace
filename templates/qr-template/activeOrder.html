@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      font-family: Roboto, sans-serif;
+    "
+  >
+    <div
+      style="
+        display: flex;
+        padding: 2rem 0;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+      "
+    >
+      <img
+        style="height: 7rem; margin-bottom: 3rem"
+        src="https://storage.googleapis.com/customers_media/Beers_logo.svg"
+        alt="Beers logo"
+      />
+      <div
+        style="
+          color: #c8c8c8;
+          font-size: 1rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+        "
+      >
+        #{{purchase_reference}}
+      </div>
+      <div style="color: #fa8c16; font-size: 1.5rem; font-weight: 700">
+        Orden pendiente
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          width: 70%;
+          gap: 1rem;
+          margin-top: 2rem;
+        "
+      >
+        <div style="display: flex">
+          <div style="flex-basis: 0; flex-grow: 1"></div>
+          <div
+            style="
+              flex-basis: 0;
+              flex-grow: 1;
+              display: flex;
+              justify-content: flex-end;
+            "
+          >
+            Precio
+          </div>
+          <div
+            style="
+              flex-basis: 0;
+              flex-grow: 1;
+              display: flex;
+              justify-content: flex-end;
+            "
+          >
+            Cantidad
+          </div>
+        </div>
+        {% for product in products %}
+        <div style="flex: 1 1 0; display: flex">
+          <div
+            style="
+              flex-basis: 0;
+              flex-grow: 1;
+              display: flex;
+              justify-content: center;
+            "
+          >
+            <strong>{{product.name}}</strong>
+          </div>
+          <div
+            style="
+              flex-basis: 0;
+              flex-grow: 1;
+              display: flex;
+              justify-content: end;
+            "
+          >
+            {{product.price}}
+          </div>
+          <div
+            style="
+              flex-basis: 0;
+              flex-grow: 1;
+              display: flex;
+              justify-content: end;
+            "
+          >
+            <strong>{{product.quantity}}</strong>
+          </div>
+        </div>
+        {% endfor %} {% for promotion in promotions %}
+        <div style="flex: 1 1 0; display: flex">
+          <div
+            style="
+              flex-basis: 0;
+              flex-grow: 1;
+              display: flex;
+              justify-content: center;
+            "
+          >
+            <strong>{{promotion.promotion__title}}</strong>
+          </div>
+          <div
+            style="
+              flex-basis: 0;
+              flex-grow: 1;
+              display: flex;
+              justify-content: end;
+            "
+          >
+            {{promotion.promotion__price}}
+          </div>
+          <div
+            style="
+              flex-basis: 0;
+              flex-grow: 1;
+              display: flex;
+              justify-content: end;
+            "
+          >
+            <strong>{{promotion.quantity}}</strong>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

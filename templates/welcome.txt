@@ -1,0 +1,10 @@
+!Bienvenido a Beers!
+Hola {{username}},
+¡Bienvenido a Beers! Estamos emocionados de tenerte con nosotros. Ahora puedes empezar a enviar birras a tus amigos en tus bares favoritos.
+Para cualquier duda o consulta, estamos aquí para ayudarte.
+¡Salud!
+Equipo de Beers
+
+Nombre de compañia
+
+    
